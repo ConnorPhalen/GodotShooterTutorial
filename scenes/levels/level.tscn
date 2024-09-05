@@ -1,19 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0oswf83turq8"]
 
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_01x0x"]
 [ext_resource type="Texture2D" uid="uid://d1qrq057m8a4b" path="res://icon.svg" id="1_lreou"]
-[ext_resource type="PackedScene" uid="uid://bolvoklawnphi" path="res://scenes/player/player.tscn" id="2_nq5pe"]
-[ext_resource type="PackedScene" uid="uid://bd03v0j4wkklr" path="res://scenes/objects/bed.tscn" id="3_3h334"]
+[ext_resource type="Script" path="res://scenes/logo.gd" id="2_128we"]
 
 [node name="Level" type="Node2D"]
-position = Vector2(194, 208)
+script = ExtResource("1_01x0x")
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(-108, -133)
 texture = ExtResource("1_lreou")
 region_rect = Rect2(21, 27, 88, 76)
-
-[node name="Player" parent="." instance=ExtResource("2_nq5pe")]
-position = Vector2(47, 319)
-
-[node name="Bed" parent="." instance=ExtResource("3_3h334")]
-position = Vector2(312, -97)
+script = ExtResource("2_128we")
