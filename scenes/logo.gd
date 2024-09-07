@@ -12,7 +12,6 @@ func _ready() -> void:
 	scale.x = test_scale*2
 	scale.y = test_scale*2
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pos.x += speed * delta

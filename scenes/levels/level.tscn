@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0oswf83turq8"]
+[gd_scene load_steps=5 format=3 uid="uid://c0oswf83turq8"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_01x0x"]
 [ext_resource type="Texture2D" uid="uid://d1qrq057m8a4b" path="res://icon.svg" id="1_lreou"]
 [ext_resource type="Script" path="res://scenes/logo.gd" id="2_128we"]
+[ext_resource type="PackedScene" uid="uid://bolvoklawnphi" path="res://scenes/player/player.tscn" id="4_1olc3"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_01x0x")
@@ -11,3 +12,6 @@ script = ExtResource("1_01x0x")
 texture = ExtResource("1_lreou")
 region_rect = Rect2(21, 27, 88, 76)
 script = ExtResource("2_128we")
+
+[node name="Player" parent="." instance=ExtResource("4_1olc3")]
+position = Vector2(244, 241)
