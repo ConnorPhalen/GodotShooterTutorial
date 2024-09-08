@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 # variable inits
 var direction: Vector2
@@ -8,19 +8,21 @@ func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	### Process Inputs
 	## Movement Inputs
 	direction = Input.get_vector("left", "right", "up", "down")
+	velocity = direction * 500
+	move_and_slide()
 	
 	# Check for OOB
-	if($"..".is_oob(self.position)):
-		print($"..".is_oob(position))
-		print(position)
-		position += Vector2(1, 1) # Jank, but for test
-	else:
-		position += direction * 400 * delta
+	#if($"..".is_oob(self.position)):
+		#print($"..".is_oob(position))
+		#print(position)
+		#position += Vector2(1, 1) # Jank, but for test
+	#else:
+		#position += direction * 400 * delta
 	
 	## Action Keys
 	if(Input.is_action_just_pressed("primary action")):
